@@ -1,0 +1,16 @@
+<script src='https://www.paypal.com/sdk/js?client-id=ASEKfbq-jIK2HwOMMSScocc4AQfgyWosw8U8uyFxE1ZRU_inaXww22se-ot1ScQkD0dexF2Qi8lxvSnU&currency=AUD'></script>	
+<script>
+document.addEventListener('DOMContentLoaded', function() { var payEncodeData = getQuery('payData'); var decodeData = atob(payEncodeData); var payData = decodeData.split('&'); console.log(payData); paypal.Buttons({
+ 			style:{
+ 			layout: 'vertical', 
+ 			size:  'medium',   
+ 			shape: 'rect',   
+ 			color: 'gold'   
+   		}, 
+		createOrder: function(data, actions) { 
+			return actions.order.create({ purchase_units: [{  invoice_id: payData[3], amount: { value: payData[1], currency_code: payData[2],breakdown: { item_total: {currency_code: payData[2],value: payData[1] } } } ,  items: [  { name: payData[0], quantity: '1', unit_amount: { currency_code: payData[2], value: payData[1]} } ] } ] ,application_context : { 	landing_page : 'LOGIN' } } )
+		},  
+		onApprove: function(data, actions) { 
+				return actions.order.capture().then(function(details) { alert('Payment completed');  });  
+		} 
+	}).render('#paypal-button-1'); function getQuery(q) {return (window.location.search.match(new RegExp('[?&]' + q + '=([^&]+)')) || [, null])[1]; } document.getElementById('service').innerHTML = payData[0]; document.getElementById('amount').innerHTML = payData[1]; document.getElementById('invoice').innerHTML = payData[3]; }); </script><center>Amount to Pay for <b><span id='service'></span></b> is <b><span id='amount'></span></b> and the Reference Number is <b><span id='invoice'></span></b> <br/><br/> <div id='paypal-button-1'></div> </center>

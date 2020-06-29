@@ -1,0 +1,125 @@
+body {
+font-family : 'PayPal Sans Big','Helvetica Neue',Helvetica,Arial,sans-serif;
+/* font-size : 1.3625rem; */
+}
+pre {
+	white-space: pre-wrap;       /* Since CSS 2.1 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.container-fluid .jumbotron {
+	border: 1px solid #CCC;
+    margin: 5px;
+}
+.msgAlert {
+	position : fixed;
+	border: 1px solid #ccc;
+	top: 0%;
+	right: 0%;
+	color:white;
+	font-size:12px;
+	border:none;
+	width:100%;
+	background:#16701f;
+	text-align:center;
+	font-family:Arial;
+	z-index:999;
+}
+.mainCode { overflow-y:scroll; height:350px; overflow-x:hidden; }
+.jumbotron { padding:10px !important; margin:3px !important; background: none !important; }
+.jumbotron2 { padding: 10px !important; margin: 0px !important; background: #676767; color: #FFF; font-size: 18px; margin-bottom:30px !important; }
+.jumbotron2 .title { font-size:20px; color:#ffffff; margin-left: 20px;  text-align: left; }
+.jumbotron2 table { width:100%; }
+.btn-danger { padding:2px !important; font-size: 8px; margin:2px; }
+
+.loader {
+position: absolute;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #eb9d28;
+    border-right: 16px solid #62ab62;
+    border-bottom: 16px solid #f35a00;
+    border-left: 16px solid #3c69ab;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    top: 50%;
+    left: 40%;
+    z-index: 9999;
+}
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.switch-field {
+	display: flex;
+	margin-bottom: 36px;
+	overflow: hidden;
+}
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: #9d9d9d;
+	color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin-right: -1px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	transition: all 0.1s ease-in-out;
+	font-weight: normal;
+}
+
+.switch-field label:hover {
+	cursor: pointer;
+}
+
+.switch-field input:checked + label {
+	background-color: #2d65ab;
+	box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
+}
+
+/* This is just for CodePen. */
+
+.form {
+	max-width: 600px;
+	font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+	font-weight: normal;
+	line-height: 1.625;
+	margin: 8px auto;
+	padding: 16px;
+}
+
+h2 {
+	font-size: 18px;
+	margin-bottom: 8px;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Checkout.js V4 Multiple Buttons - Client Side REST</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+	
+	<span class="msgAlert"></span>
+	
+	<div class="jumbotron2 text-center">
+	  <!-- PayPal Logo --><table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"> <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="PayPal Logo"></a></td><td><div class="title"> Checkout.js V4 Mulitple Buttons - Client Side REST Implementation</div></td></tr></table><!-- PayPal Logo -->
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row jumbotron">
+			<div class="col-md-3">
+				<form method="post" action="">
+					<!-- <div class="form-group">
+						<span for="sandboxOrLive">Sandbox/Live :</span>
+						<select name="type" id="type" class="form-control formElemComm">
+							<option value="sandbox">Sandbox</option>
+							<option value="production">Production</option>
+						</select>
+					</div> -->
+					<div class="form-group">
+						<span for="clientId">Client Id : </span> 
+						<a onclick="window.open('https://developer.paypal.com/docs/integration/admin/manage-apps/#create-an-app-for-testing','popup','width=600,height=600'); return false;" target="popup"><span class="glyphicon glyphicon-exclamation-sign"></span>
+</a>
+						<input type="text" name="clientId" id="clientId" value="ASEKfbq-jIK2HwOMMSScocc4AQfgyWosw8U8uyFxE1ZRU_inaXww22se-ot1ScQkD0dexF2Qi8lxvSnU" class="form-control formElemComm"> 
+					</div>
+					<div class="form-group">
+						<span for="currency">Currency :</span>
+						<select name="currency" id="currency" class="form-control formElemComm"><option value="AUD">AUD</option><option value="BRL">BRL</option><option value="CAD">CAD</option><option value="CHF">CHF</option><option value="CZK">CZK</option><option value="DKK">DKK</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="HKD">HKD</option><option value="HUF">HUF</option><option value="ILS">ILS</option><option value="INR">INR</option><option value="JPY">JPY</option><option value="MXN">MXN</option><option value="MYR">MYR</option><option value="NOK">NOK</option><option value="NZD">NZD</option><option value="PHP">PHP</option><option value="PLN">PLN</option><option value="RUB">RUB</option><option value="SEK">SEK</option><option value="SGD">SGD</option><option value="THB">THB</option><option value="TWD">TWD</option><option value="USD">USD</option></select>
+					</div>
+					<div class="form-group">
+						<span for="layout">Layout :</span>
+						<select name="layout" id="layout" class="form-control formElemComm">
+							<option value="horizontal">Horizontal</option>
+							<option value="vertical" selected>Vertical</option>
+						</select>
+					</div>
+					<!-- <div class="form-group">
+						<span for="label">Label :</span>
+						<select name="label" id="label" class="form-control formElemComm">
+							<option value="checkout">Checkout</option>
+							<option value="credit">Credit</option>
+							<option value="pay">Pay</option>
+							<option value="buynow">Buynow</option>
+							<option value="generic">Generic</option>
+						</select>
+					</div> -->
+					<div class="form-group">
+						<span for="size">Size :</span>
+						<select name="size" id="size" class="form-control formElemComm">
+							<option value="small">Small</option>
+							<option value="medium" selected>Medium</option>
+							<option value="large">Large</option>
+							<option value="responsive">Responsive</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<span for="shape">Shape :</span>
+						<select name="shape" id="shape" class="form-control formElemComm">
+							<option value="pill">Pill</option>
+							<option value="rect" selected>Rect</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<span for="color">Color :</span>
+						<select name="color" id="color" class="form-control formElemComm">
+							<option value="gold">Gold</option>
+							<option value="blue">Blue</option>
+							<option value="silver">Silver</option>
+							<option value="black">Black</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<span for="color">Locale Code :</span>
+						<select name="locale" id="locale" class="form-control formElemComm">
+							<option value="en_AU">en_AU</option>
+							<option value="en_GB">en_GB</option>
+							<option value="en_IN" selected>en_IN</option>
+							<option value="fr_CA">fr_CA</option>
+							<option value="es_ES">es_ES</option>
+							<option value="fr_FR">fr_FR</option>
+							<option value="it_IT">it_IT</option>
+							<option value="de_DE">de_DE</option>
+							<option value="pt_BR">pt_BR</option>
+							<option value="zh_CN">zh_CN</option>
+							<option value="da_DK">da_DK</option>
+							<option value="zh_HK">zh_HK</option>
+							<option value="id_ID">id_ID</option>
+							<option value="he_IL">he_IL</option>
+							<option value="ja_JP">ja_JP</option>
+							<option value="ko_KR">ko_KR</option>
+							<option value="nl_NL">nl_NL</option>
+							<option value="no_NO">no_NO</option>
+							<option value="pl_PL">pl_PL</option>
+							<option value="pt_PT">pt_PT</option>
+							<option value="ru_RU">ru_RU</option>
+							<option value="sv_SE">sv_SE</option>
+							<option value="th_TH">th_TH</option>
+							<option value="zh_TW">zh_TW</option>
+							<option value="en_US">en_US</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<span for="guest">Landing Page - Billing (Enable/Disable) :</span>
+						<input type="checkbox" name="guest" id="guest" class="formElemComm" value="1">
+					</div>
+			</div>
+			<div class="col-md-5">
+				<h4>Add to Head : </h4>
+				<pre id="prettyprintHead" class="prettyprint mainCode"></pre>
+				<a class="copy-text btn btn-warning" data-clipboard-target="#prettyprintHead">Copy</a>
+				<div class="respBlock" style="display: none">
+					<h4>Response : </h4>
+					<pre id="prettyprintResult" ></pre>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div id="segment"></div>
+				<div class="col-md-11"><button name="addMore" class="btn btn-primary center-block" id="addMore">Generate New Button</button></div>
+			</div>
+		</div><br/>
+	</div>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="  crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script src="https://www.paypal.com/sdk/js?client-id=ASEKfbq-jIK2HwOMMSScocc4AQfgyWosw8U8uyFxE1ZR2U_inaXww22se-ot1ScQkD0dexF2Qi8lxvSnU&currency=USD"></script>
+</body>
+</html>
